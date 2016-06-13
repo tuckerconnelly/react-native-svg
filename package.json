@@ -1,41 +1,47 @@
 {
-    "version": "2.1.1",
-    "name": "react-native-svg",
-    "description": "react native svg library",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/magicismight/react-native-svg"
-    },
-    "license": "MIT",
-    "main": "./index.js",
-    "keywords": [
-        "react-component",
-        "react-native",
-        "ios",
-        "android",
-        "SVG",
-        "ART",
-        "VML"
-    ],
-    "scripts": {
-        "lint": "eslint ./"
-    },
-    "peerDependencies": {
-        "react-native": ">=0.25.1"
-    },
-    "dependencies": {
-        "color": "^0.11.1",
-        "lodash": "^4.0.0"
-    },
-    "devDependencies": {
-        "babel-eslint": "^6.0.0",
-        "eslint": "^2.5.3",
-        "eslint-plugin-react": "^4.2.1"
-    },
-    "nativePackage": true,
-    "rnpm": {
-        "ios": {
-            "project": "ios/RNSVG.xcodeproj"
-        }
+  "version": "2.1.1",
+  "name": "react-native-svg",
+  "description": "react native svg library",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/magicismight/react-native-svg"
+  },
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "keywords": [
+    "react-component",
+    "react-native",
+    "ios",
+    "android",
+    "SVG",
+    "ART",
+    "VML"
+  ],
+  "scripts": {
+    "lint": "eslint ./src",
+    "prebuild": "rm -rf lib",
+    "build": "babel -d lib src",
+    "build:watch": "babel -d lib src -w",
+    "prepublish": "npm run build"
+  },
+  "peerDependencies": {
+    "react-native": ">=0.25.1"
+  },
+  "dependencies": {
+    "color": "^0.11.1",
+    "lodash": "^4.0.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-eslint": "^6.0.0",
+    "babel-preset-react-native": "^1.9.0",
+    "eslint": "^2.5.3",
+    "eslint-plugin-react": "^4.2.1"
+  },
+  "nativePackage": true,
+  "rnpm": {
+    "ios": {
+      "project": "ios/RNSVG.xcodeproj"
     }
+  }
 }
