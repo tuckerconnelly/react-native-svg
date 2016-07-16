@@ -7,7 +7,7 @@
         "url": "https://github.com/magicismight/react-native-svg"
     },
     "license": "MIT",
-    "main": "./index.js",
+    "main": "./lib/index.js",
     "keywords": [
         "react-component",
         "react-native",
@@ -19,7 +19,11 @@
         "gradient"
     ],
     "scripts": {
-        "lint": "eslint ./"
+        "lint": "eslint ./",
+        "prebuild": "rm -rf lib",
+        "build": "babel -d lib src",
+        "build:watch": "babel -d lib src -w",
+        "prepublish": "npm run build"
     },
     "peerDependencies": {
         "react-native": ">=0.32.0"
