@@ -12,6 +12,10 @@ class Shape extends Component {
         this.state = this.touchableGetInitialState();
     }
 
+    componentDidMount() {
+        this.viewConfig = this.root.viewConfig;
+    }
+
     extractProps = (props, options) => {
         let extractedProps = extractProps(props, options);
         if (extractedProps.touchable && !extractedProps.disabled) {
